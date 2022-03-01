@@ -126,6 +126,7 @@ public class FVM : MonoBehaviour
         	triangles[t*3+1]=t*3+1;
         	triangles[t*3+2]=t*3+2;
         }
+
         Mesh mesh = GetComponent<MeshFilter> ().mesh;
 		mesh.vertices  = vertices;
 		mesh.triangles = triangles;
@@ -268,7 +269,7 @@ public class FVM : MonoBehaviour
         touchedPointsIndex.Clear();
 
     }
-
+    
     void _Update()
     {
     	// Jump up.

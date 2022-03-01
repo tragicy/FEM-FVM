@@ -16,7 +16,18 @@ public class MatrixTool
         }
         return newMat;
     }
-
+    public static Matrix4x4 mAdd2d(Matrix4x4 m1, Matrix4x4 m2)
+    {
+        Matrix4x4 newMat = Matrix4x4.identity;
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                newMat[i, j] = m1[i, j] + m2[i, j];
+            }
+        }
+        return newMat;
+    }
     public static Matrix4x4 mMinus(Matrix4x4 m1, Matrix4x4 m2)
     {
         Matrix4x4 newMat = Matrix4x4.identity;
@@ -29,7 +40,18 @@ public class MatrixTool
         }
         return newMat;
     }
-
+    public static Matrix4x4 mMinus2d(Matrix4x4 m1, Matrix4x4 m2)
+    {
+        Matrix4x4 newMat = Matrix4x4.identity;
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                newMat[i, j] = m1[i, j] - m2[i, j];
+            }
+        }
+        return newMat;
+    }
     public static Matrix4x4 mMultiply(Matrix4x4 m1, float f)
     {
         Matrix4x4 newMat = Matrix4x4.identity;
@@ -42,9 +64,25 @@ public class MatrixTool
         }
         return newMat;
     }
-
+    public static Matrix4x4 mMultiply2d(Matrix4x4 m1, float f)
+    {
+        Matrix4x4 newMat = Matrix4x4.identity;
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                newMat[i, j] = m1[i, j] * f;
+            }
+        }
+        return newMat;
+    }
     public static float Trace(Matrix4x4 m)
     {
         return m[0,0] + m[1,1] + m[2,2];
     }
+    public static float Trace2d(Matrix4x4 m)
+    {
+        return m[0, 0] + m[1, 1];
+    }
+
 }
